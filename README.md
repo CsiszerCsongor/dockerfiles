@@ -7,7 +7,7 @@ https://github.com/oracle/docker-images/blob/main/OracleInstantClient/oraclelinu
 	docker build -t sqlplus . 
 
 ###### Create container:
-	docker run -ti --rm sqlplus sqlplus /bin/bash
+	docker run -ti --rm sqlplus /bin/bash
 
 ###### Connect to database:	
 	sqlplus <user>/<pass>@<IP>/<SID>
