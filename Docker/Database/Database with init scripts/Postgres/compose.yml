@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  postgresql:
+    container_name: postgres_with_init
+    image: postgres:15
+    environment:
+      POSTGRES_USER: cscs
+      POSTGRES_PASSWORD: cscs
+      POSTGRES_DB: cscs_db
+    ports:
+      - "5434:5432"
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
+    tmpfs:
+      - /var/lib/postgresql/data
+    restart: unless-stopped
